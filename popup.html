@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="assets/css/popup.min.css" rel="stylesheet">
+  </head>
+<body>
+	<div class="spinner-wrapper" style="display: none;">
+        <div class="spinner">
+            <img src="assets/images/loader.gif">
+            <span></span>
+        </div>
+    </div>
+	<div class="container">
+		<div class="logo">
+			<img src="assets/images/icon.png" style="width:60px;"/>
+			<span>DND created by <a href="http://rudrainnovatives.com" target="_blank">Rudra.</a>
+		</div>
+		<div class="text-input">
+			<input type="hidden" id="openTab" value="">
+			<textarea id="asinSelector" class="form-control rounded-0" placeholder="ASIN" required></textarea>
+		</div>
+		<div class="action-button">
+			<button type="button" id="analysisCopy">Analyze Copy</button>
+		</div>
+		
+		<div class="error-action">
+			<div class="error-section"></div>
+			<div class="success-section"></div>
+		</div>
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popup.js"></script>
+</body>
+</html>
