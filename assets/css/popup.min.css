@@ -1,0 +1,84 @@
+.container{
+	width:280px;
+}
+
+.logo {
+	text-align: center;
+	width: 100%;
+	margin: 20px 0px;
+}
+
+.logo span{
+	width: 100%;
+	display:block;
+}
+
+.text-input, .action-button{
+	text-align: center;
+	width: 100%;	
+}
+
+#asinSelector, #asinSelector:hover {
+	width:200px;
+	height: 90px;
+	border: 1px solid #cccccc;
+	padding: 5px;
+	resize: none;
+}
+
+#analysisCopy, #analysisCopy:hover {
+	width:200px;
+	height:35px;
+	background:green;
+	color:#FFF;
+	border:solid 1px green;
+	margin: 15px 0px;
+}
+
+.error-section {
+	width: 100%;
+	color:red;
+	text-align: center;
+}
+
+.success-section {
+	width: 100%;
+	color:green;
+	text-align: center;
+}
+
+.error-action {
+	width:100%;
+	margin-bottom: 50px;
+}
+
+.spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bababa;
+    z-index: 999999;
+    opacity: .9;
+}
+
+.spinner {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.spinner span {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+
+button:focus, input:focus, textarea:focus {
+	outline: none !important;
+}
