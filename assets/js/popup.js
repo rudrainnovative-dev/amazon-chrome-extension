@@ -2,21 +2,21 @@ document.addEventListener('DOMContentLoaded', function () {
   	chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
 		$('#openTab').val(tabs[0].url);
 		document.getElementById("asinSelector").focus();
+		if(tabs[0].url.indexOf("amazon") < 0) {
+			$('.form-input-group').css('display', 'none');
+			$('.error-section').html('DNA Tool work only with amazon website.');
+		}
 	});
 });
 
 $(function () {
 	var apiUrl = "https://amz.rudraserver.com";
     $("#analysisCopy").click(function () {
+    	clearMessage();
 		var openTab = $('#openTab').val();
 		var asin = $("#asinSelector").val();
-		var openTabURL = POST_hostname(openTab);
-
+		var openTabURL = get_hostname(openTab);
 		if(openTabURL != null && openTabURL.indexOf("amazon") >= 0) {
-			
-			$('.error-section').html('');
-			$('.success-section').html('');
-
 			if(asin != '') {
 				$('.spinner-wrapper').show();
 				$.ajax({
@@ -31,36 +31,37 @@ $(function () {
 	                        a.href = url;
 	                        a.click();
 	                        window.URL.revokeObjectURL(url);
-
 	                        var asin = $("#asinSelector").val('');
-	                        $('.error-section').html('');
 	                        $('.success-section').html('File downloaded successfully!!!');
 			            }
 			            else {
 			            	$('.error-section').html(res.error);
-			            	$('.success-section').html('');
 			            }
 			            $('.spinner-wrapper').hide();
 			        },
 			        error: function(err) {
 			        	$('.error-section').html('Internal server error!!!');
-			        	$('.success-section').html('');
 			        	$('.spinner-wrapper').hide();
 			        }
 			    });
 			}
 			else {
-				$('.error-section').html('ASIN is required field!!!');
-	            $('.success-section').html('');
+				$('#asinSelector').css('border', 'solid 1px #FF0000');
 			}
 		}
 		else {
-			$('.error-section').html('Not a valid amazon page!!!');
+			$('.error-section').html('DNA Tool work only with amazon website.');
 		}
     });
 
-    function POST_hostname(url) {
+    function get_hostname(url) {
 	    var m = url.match(/^https:\/\/[^/]+/);
 	    return m?m[0]:null;
+	}
+
+	function clearMessage() {
+		$('.error-section').html('');
+		$('.success-section').html('');
+		$('#asinSelector').css('border', 'solid 1px #ccccc');
 	}
 });
