@@ -1,0 +1,19 @@
+{
+	"manifest_version": 2,
+  	"name": "DNA Tool",
+  	"description": "This is amazon tool to fetch reviews and download a excel sheet.",
+  	"version": "1.0",
+  	"permissions": [
+		  "tabs", "https://amz.rudraserver.com/*"
+	 ],
+  "browser_action": {
+    "default_icon": "assets/images/icon-32.png",
+    "default_popup": "popup.html",
+    "icons": { "128": "assets/images/icon.png" }  
+	},
+	"icons": {
+    "16": "assets/images/icon.png",
+    "48": "assets/images/icon.png",
+    "128": "assets/images/icon.png"
+  }
+}
