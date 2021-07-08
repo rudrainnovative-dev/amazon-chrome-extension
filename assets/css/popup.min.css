@@ -1,55 +1,46 @@
-.container{
+body{
+	background: #eee;
 	width:280px;
+	height:350px;
+	text-align:center;
 }
 
 .logo {
-	text-align: center;
-	width: 100%;
 	margin: 20px 0px;
 }
 
 .logo span{
-	width: 100%;
 	display:block;
+	margin-top:10px;
+	font-weight: 600;
 }
 
-.text-input, .action-button{
-	text-align: center;
-	width: 100%;	
-}
-
-#asinSelector, #asinSelector:hover {
-	width:200px;
-	height: 90px;
+textarea {
+	width:220px;
+	height: 100px;
 	border: 1px solid #cccccc;
+	border-radius:3px;
 	padding: 5px;
 	resize: none;
+	font-weight: 500;
 }
 
-#analysisCopy, #analysisCopy:hover {
-	width:200px;
-	height:35px;
-	background:green;
+button {
+	width:220px;
+	height:40px;
+	background:#45738c;
 	color:#FFF;
-	border:solid 1px green;
+	border:solid 1px #45738c;
 	margin: 15px 0px;
+	font-weight: 600;
 }
 
 .error-section {
-	width: 100%;
-	color:red;
-	text-align: center;
+	color:#FF0000;
 }
 
 .success-section {
-	width: 100%;
 	color:green;
-	text-align: center;
-}
-
-.error-action {
-	width:100%;
-	margin-bottom: 50px;
 }
 
 .spinner-wrapper {
