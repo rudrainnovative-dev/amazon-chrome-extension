@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+	<head>
+    	<link href="assets/css/popup.css" rel="stylesheet">
+    	<title>DNA Tool</title>
+  	</head>
+<body>
+	<div class="spinner-wrapper" style="display: none;">
+        <div class="spinner">
+            <img src="assets/images/loader.gif">
+            <span>Please wait</span>
+        </div>
+    </div>
+	<div class="container">
+		<div class="logo">
+			<img src="assets/images/icon.png" style="width:60px;"/>
+			<span>DNA Tool 1.0</span>
+		</div>
+		<div class="form-input-group">
+			<div class="text-input">
+				<input type="hidden" id="amazon_url" value="">
+				<textarea id="asin_selector" class="form-control rounded-0" placeholder="ASIN" required></textarea>
+			</div>
+			<div class="action-button">
+				<button type="button" id="analysis_copy">ANALYZE COPY</button>
+			</div>
+		</div>
+		<div class="form-input-error">
+			<div class="error-section"></div>
+			<div class="success-section"></div>
+		</div>
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body{
+	text-align:center;
+}
+
+.logo {
+	margin: 20px 0px;
+}
+ 
+.logo span{
+	display:block;
+	margin-top:10px;
+	font-weight: 600;
+}
+
+textarea {
+	width:220px;
+	height: 100px;
+	border: 1px solid #cccccc;
+	border-radius:3px;
+	padding: 5px;
+	resize: none;
+	font-weight: 500;
+}
+
+button {
+	width:220px;
+	height:40px;
+	background:#000;
+	color:#FFF;
+	border:solid 1px #000;
+	margin: 15px 0px;
+	font-weight: 600;
+}
+
+.error-section {
+	color:#FF0000;
+}
+
+.success-section {
+	color:green;
+}
+
+.spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bababa;
+    z-index: 999999;
+    opacity: .9;
+}
+
+.spinner {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.spinner span {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+}
+
+button:focus, input:focus, textarea:focus {
+	outline: none !important;
+}
