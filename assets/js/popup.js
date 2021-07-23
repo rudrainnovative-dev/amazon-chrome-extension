@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if(url == null || url.indexOf("amazon") < 0) {
 			$('.form-input-group').css('display', 'none');
 			$('.error-section').html('DNA Tool work only with amazon website.');
+			$('#amazon_url').val('https://amazon.com');
 		}
 		else {
 			$('#amazon_url').val(url);
@@ -12,8 +13,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.getElementById("asin_selector").focus();
 	});
 
-	chrome.browserAction.setBadgeText({ text: 'DNA' });
-	chrome.browserAction.setBadgeBackgroundColor({color: '#4688F1'});
+	var storageVariable = chrome.storage.sync.get({
+	    includedRatings: 'all_stars',
+	    phraseLength: '7'
+	},
+  	function(items) {
+  		document.getElementById('included_rating').value = items.includedRatings;
+    	document.getElementById('phrase_length').value = items.phraseLength;
+  	});
+
 });
 
 $(function () {
@@ -22,13 +30,16 @@ $(function () {
     	clear_message();
 		var amazon_url = $('#amazon_url').val();
 		var asin = $("#asin_selector").val();
+		var filter_by_star = $("#included_rating").val();
+		var phrase_length = $("#phrase_length").val();
+		document.getElementById("asin_selector").placeholder = 'ASIN';
 		if(asin != '') {
 			$('.spinner-wrapper').show();
 			$.ajax({
 		        url: api_url+'/dna',
 		        type: 'POST',
 		        dataType: "json",
-		        data : {action : 'reviews', url : amazon_url, asin : asin},
+		        data : {action : 'reviews', url : amazon_url, asin : asin, filter_by_star : filter_by_star, phrase_length : phrase_length},
 		        success: function(res) {
 		            if(res.status) {
 		            	var url = api_url+'/tmp/dna/'+res.download;
@@ -49,7 +60,9 @@ $(function () {
 		    });
 		}
 		else {
-				$('#asin_selector').css('border', 'solid 1px #FF0000');
+			$('#asin_selector').css('border', 'solid 1px #FF0000');
+			document.getElementById("asin_selector").focus();
+			document.getElementById("asin_selector").placeholder = 'Please enter asin.';
 		}
     });
 });

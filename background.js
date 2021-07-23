@@ -1,6 +1,6 @@
 chrome.browserAction.onClicked.addListener(function (tab) {
 	chrome.tabs.query({currentWindow: true, active: true}, function(tabs) {
-		var left = 800;
+		var left = screen.width-450;
 		var top = 100;
 		var width = 380;
 		var height = 400;
@@ -16,4 +16,6 @@ chrome.browserAction.onClicked.addListener(function (tab) {
 			}
 		});
 	});
+
+	//chrome.tabs.executeScript({ file: "assets/js/analyzer.js" });
 });

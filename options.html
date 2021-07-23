@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>DNA Tool Options</title></head>
+<body>
+	<p><b>INCLUDED RATINGS</b></p>
+	<select id="ratings" style="width:200px;">
+	 	<option value="all_stars">All Stars</option>
+	 	<option value="five_star">5 star</option>
+	 	<option value="four_star">4 star</option>
+	 	<option value="three_star">3 star</option>
+	 	<option value="two_star">2 star</option>
+	 	<option value="one_star">1 star</option>
+	</select>
+	<br/><br/>
+	<p><b>PHRASE LENGTH (IN WORDS)</b></p>
+	<input type="number" id="phrase_length" value="7" min = "1" max="15" style="width:190px;" />
+	<small style="display: block;color:#FF0000;">You can set max 15 word(s).</small>
+	<br/><br/>
+	<button id="saveOptions" style="width:100px;height:30px;">Save</button>
+	<br/><br/>
+	<p id="status" style="color:green;"></p>
+	<script src="assets/js/options.js"></script>
+</body>
+</html>

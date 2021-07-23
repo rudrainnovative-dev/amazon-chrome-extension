@@ -20,6 +20,7 @@
     "128": "assets/images/icon.png"
   },
   "permissions": [
-    "tabs", "https://amz.rudraserver.com/*"
-  ]
+    "tabs", "activeTab", "https://amz.rudraserver.com/*", "storage"
+  ],
+  "options_page": "options.html"
 }

@@ -70,3 +70,22 @@ button {
 button:focus, input:focus, textarea:focus {
 	outline: none !important;
 }
+
+
+.form-input-setting label{
+	display: block;
+	font-weight:600;
+	margin: 20px 0px 10px; 
+}
+
+.form-input-setting select, .form-input-setting input {
+	width:220px;
+	height: 25px;
+}
+
+a.settings, a.back {
+	position: fixed;
+    right: 5px;
+    top: 5px;
+    color: blue;
+}
